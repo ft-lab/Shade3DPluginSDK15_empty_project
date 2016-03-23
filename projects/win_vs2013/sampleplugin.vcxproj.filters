@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\..\include\sxcore\debug.cpp">
+      <Filter>sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\include\sxcore\com.cpp">
+      <Filter>sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\include\sxcore\vectors.cpp">
+      <Filter>sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\main.cpp">
+      <Filter>mysources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\MyPluginInterface.cpp">
+      <Filter>mysources</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\MyPluginInterface.h">
+      <Filter>mysources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\GlobalHeader.h">
+      <Filter>mysources</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="script2.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\source\resources\ja.lproj\sxuls\text.sxul">
+      <Filter>sxuls</Filter>
+    </None>
+    <None Include="..\source\resources\en.lproj\sxuls\text.sxul">
+      <Filter>sxuls</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="mysources">
+      <UniqueIdentifier>{9152b29b-896c-45b2-a139-908dd425f3d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sxuls">
+      <UniqueIdentifier>{875c4890-34a7-4398-a5af-26da6dfee561}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources">
+      <UniqueIdentifier>{e6030d7a-1921-4ed6-af2a-954dc751255c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
