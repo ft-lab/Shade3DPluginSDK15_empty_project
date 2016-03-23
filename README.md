@@ -12,8 +12,8 @@ Shade 3D plugin menu ([Tools] - [Plugins]) When you select the "HelloShade" from
 It was confirmed at Shade 3D ver.15.2.
 
 Development environment is the following.  
-* Windows Visual Studio 2013 or 2015
-* Xcode 6.4 on OS X 10.11.4
+* Windows : Microsoft Visual Studio 2013 or 2015
+* Mac : Xcode 6.4 on OS X 10.11.4
 
 ## Placement
 
