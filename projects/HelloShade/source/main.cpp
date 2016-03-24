@@ -52,7 +52,6 @@ extern "C" SXSDKEXPORT int STDCALL has_interface (const IID &iid, sxsdk::shade_i
  * Return the interface name.
  */
 extern "C" SXSDKEXPORT const char * STDCALL get_name (const IID &iid, int i, sxsdk::shade_interface *shade, void *) {
-	// SXULより、プラグイン名を取得して渡す.
 	if (iid == plugin_iid) {
 		if (i == 0) {
 			return CMyPluginInterface::name(shade);
