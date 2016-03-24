@@ -1,7 +1,8 @@
 ﻿/**
  *  @file   MyPluginInterface.cpp
- *  @brief  Shade15プラグインSDK、plugin_interface派生クラス.
+ *  @brief  Plugin SDK, plugin_interface inherited class.
  */
+
 
 #include "MyPluginInterface.h"
 
@@ -18,10 +19,9 @@ CMyPluginInterface::~CMyPluginInterface ()
 }
 
 /**
- * プラグインメニューより選択された場合に呼ばれる.
+ * Get the plugin name from SXUL (text.sxul).
  */
 void CMyPluginInterface::do_it (sxsdk::shade_interface *shade, sxsdk::scene_interface *scene, void *aux)
 {
 	shade->message("Hello shade.");
 }
-

@@ -1,17 +1,18 @@
 ﻿/**
  *  @file   main.cpp
- *  @brief  Shade15プラグインSDK雛形.
+ *  @brief  Empty project for Shade15 Plugin SDK.
  */
 
 /*
-	[mac]	OSX用のプロジェクト一式.
-    [win]	Windows用のプロジェクト一式.
+	[mac]         Mac OS X project.
+    [win_vs2013]  Windows project (Visual Studio 2013).
+    [win_vs2015]  Windows project (Visual Studio 2015).
 
-	[source]  ソースファイル一式.
-        main.cpp           "HelloShade!"と表示するだけのサンプル.
-		[resources]        リソースファイルフォルダ.
-		     [en.lproj]       英語リソースフォルダ.
-		     [ja.lproj]       日本語リソースフォルダ.
+	[source]  sources.
+        main.cpp           Sample of only display the "Hello Shade".
+		[resources]        Resources folder.
+		     [en.lproj]    SXUL for English.
+		     [ja.lproj]    SXUL for Japanese.
 */
 
 #include "GlobalHeader.h"
@@ -19,10 +20,10 @@
 
 
 //**************************************************//
-//	グローバル関数									//
+//	Global functions.
 //**************************************************//
 /**
- * プラグインインターフェースの生成.
+ * Create of plugin interface.
  */
 extern "C" SXSDKEXPORT void STDCALL create_interface (const IID &iid, int i, void **p, sxsdk::shade_interface *shade, void *) {
 	unknown_interface *u = NULL;
@@ -40,7 +41,7 @@ extern "C" SXSDKEXPORT void STDCALL create_interface (const IID &iid, int i, voi
 }
 
 /**
- * インターフェースの数を返す.
+ * Return the number of interface.
  */
 extern "C" SXSDKEXPORT int STDCALL has_interface (const IID &iid, sxsdk::shade_interface *shade) {
 	if (iid == plugin_iid) return 1;
@@ -48,7 +49,7 @@ extern "C" SXSDKEXPORT int STDCALL has_interface (const IID &iid, sxsdk::shade_i
 }
 
 /**
- * インターフェース名を返す.
+ * Return the interface name.
  */
 extern "C" SXSDKEXPORT const char * STDCALL get_name (const IID &iid, int i, sxsdk::shade_interface *shade, void *) {
 	// SXULより、プラグイン名を取得して渡す.
@@ -61,7 +62,7 @@ extern "C" SXSDKEXPORT const char * STDCALL get_name (const IID &iid, int i, sxs
 }
 
 /**
- * プラグインのUUIDを返す.
+ * Return the plugin UUID.
  */
 extern "C" SXSDKEXPORT sx::uuid_class STDCALL get_uuid (const IID &iid, int i, void *) {
 	if (iid == plugin_iid) {
@@ -75,7 +76,7 @@ extern "C" SXSDKEXPORT sx::uuid_class STDCALL get_uuid (const IID &iid, int i, v
 
 
 /**
- * バージョン情報.
+ * Version information.
  */
 extern "C" SXSDKEXPORT void STDCALL get_info (sxsdk::shade_plugin_info &info, sxsdk::shade_interface *shade, void *) {
 	info.sdk_version = SHADE_BUILD_NUMBER;
@@ -87,10 +88,8 @@ extern "C" SXSDKEXPORT void STDCALL get_info (sxsdk::shade_plugin_info &info, sx
 }
 
 /**
- * 常駐プラグイン.
+ * Returns true if the resident plugins.
  */
 extern "C" SXSDKEXPORT bool STDCALL is_resident (const IID &iid, int i, void *) {
 	return false;
 }
-
-

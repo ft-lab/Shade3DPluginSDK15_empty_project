@@ -1,6 +1,6 @@
 ﻿/**
  *  @file   MyPluginInterface.h
- *  @brief  Shade15プラグインSDK、plugin_interface派生クラス.
+ *  @brief  Plugin SDK, plugin_interface inherited class.
  */
 
 #ifndef _MYPLUGININTERFACE_H
@@ -14,19 +14,19 @@ private:
 	sxsdk::shade_interface& shade;
 
 	/**
-	 * SDKのビルド番号を指定（これは固定で変更ナシ）。.
-	 * ※ これはプラグインインターフェースごとに必ず必要。.
+	 * SDK build number.
+	 *  This is always required for each plugin_interface.
 	 */
 	virtual int get_shade_version () const { return SHADE_BUILD_NUMBER; }
 
 	/**
-	 * UUIDの指定（独自に定義したGUIDを指定）.
-	 * ※ これはプラグインインターフェースごとに必ず必要。.
+	 * UUID (Unique ID).
+	 * This is always required for each plugin_interface.
 	 */
 	virtual sx::uuid_class get_uuid (void * = 0) { return MY_PLUGIN_ID; }
 
 	/**
-	 * プラグインメニューより選択された場合に呼ばれる.
+	 * Called when it is selected from the plugin menu.
 	 */
 	virtual void do_it (sxsdk::shade_interface *shade, sxsdk::scene_interface *scene, void *aux = 0);
 
@@ -35,7 +35,7 @@ public:
 	virtual ~CMyPluginInterface ();
 
 	/**
-	 * プラグイン名をSXUL(text.sxul)より取得.
+	 * Get the plugin name from SXUL (text.sxul).
 	 */
 	static const char *name (sxsdk::shade_interface *shade) { return shade->gettext("title"); }
 
